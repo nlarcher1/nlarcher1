@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur de points - Badminton</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .score {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compteur de points - Badminton</h1>
+        <div class="score" id="score">0</div>
+        <button onclick="addPoints(1)">Zone centrale (+1)</button>
+        <button onclick="addPoints(10)">Zone arrière (+10)</button>
+        <button onclick="addPoints(10)">Smash (+10)</button>
+        <button onclick="addPoints(10)">Zone latérale (+10)</button>
+        <button onclick="resetScore()">Réinitialiser</button>
+    </div>
+
+    <script>
+        let score = 0;
+
+        function addPoints(points) {
+            score += points;
+            updateScore();
+        }
+
+        function updateScore() {
+            document.getElementById('score').innerText = score;
+        }
+
+        function resetScore() {
+            score = 0;
+            updateScore();
+        }
+    </script>
+</body>
+</html>
